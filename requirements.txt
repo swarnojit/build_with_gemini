@@ -1,0 +1,20 @@
+streamlit 
+opencv-python 
+numpy 
+pandas 
+scikit-learn 
+torch 
+torchvision 
+    rasterio 
+    pillow 
+    matplotlib 
+    seaborn 
+    plotly 
+    albumentations 
+    segmentation-models-pytorch 
+    tqdm 
+    scikit-image 
+    scipy 
+    geopandas 
+    shapely 
+    pyproj
