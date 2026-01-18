@@ -1,92 +1,90 @@
-# build_with_gemini
-🌳 Afforestation Sapling Survival Analysis System
+# 🌳 Afforestation Sapling Survival Analysis
 
-An AI-powered drone imagery analysis tool that monitors sapling survival in afforestation projects using Google Gemini 2.5 Flash.
+AI-powered drone imagery analysis tool for monitoring afforestation projects using Google Gemini 2.5 Flash.
 
-📌 Overview
+## 🚀 Quick Start
 
-The system compares post-pitting (OP1) and post-plantation (OP3) drone orthomosaic images to automatically:
+### Installation
 
-Detect planting pits
+```bash
+pip install streamlit google-generativeai pillow python-dotenv pandas numpy
+```
 
-Identify surviving saplings
+### Setup
 
-Calculate survival and mortality rates
+1. Create a `.env` file:
+```env
+GEMINI_API_KEY=your_api_key_here
+```
 
-Generate detailed reports
+2. Run the app:
+```bash
+streamlit run app.py
+```
 
-Built for large-scale afforestation monitoring with minimal manual effort.
+3. Open browser at `http://localhost:8501`
 
-✨ Key Features
+## 📋 Features
 
-🤖 AI-Based Image Analysis using Gemini 2.5 Flash
+- **AI Analysis**: Automated sapling detection and survival rate calculation
+- **Large Image Support**: Handles 400M+ pixel drone imagery
+- **Smart Processing**: Image compression and chunked analysis
+- **Export Options**: JSON, CSV, and text reports
+- **Interactive Dashboard**: Real-time metrics and visualizations
 
-🛰️ Handles Very Large Drone Images (400M+ pixels)
+## 🎯 Usage
 
-🧩 Chunked Image Processing for accurate spatial analysis
+1. **Configure** (Sidebar):
+   - API key loads automatically from `.env`
+   - Set image paths for OP1 (reference) and OP3 (current) images
+   - Adjust compression settings (default: 3072px)
+   - Configure patch information (area, saplings, spacing)
 
-📊 Survival & Mortality Metrics in real time
+2. **Analyze**:
+   - Click "🔍 Analyze Sapling Survival"
+   - Wait for processing (2-5 minutes for large images)
+   - Review results in dashboard
 
-📁 Export Reports in JSON, CSV, and text formats
+3. **Export**:
+   - Download JSON report, CSV data, or text summary
 
-🖥️ Interactive Streamlit Dashboard
+## 📊 Key Metrics
 
-⚙️ Tech Stack
+- **Survival Rate**: Percentage of successfully growing saplings
+- **Casualties**: Number of failed plantings
+- **Confidence Level**: Analysis reliability (high/medium/low)
 
-Python
+## ⚙️ Configuration
 
-Streamlit
+| Setting | Default | Description |
+|---------|---------|-------------|
+| Max Dimension | 3072px | Image compression size |
+| JPEG Quality | 85 | Compression quality |
+| Chunking | On | Split images for detailed analysis |
+| Chunk Size | 1024px | Size of analysis chunks |
 
-Google Gemini API
+## 🔧 Troubleshooting
 
-Pillow, NumPy, Pandas
+**API Key Error**: Add `GEMINI_API_KEY` to `.env` file  
+**File Not Found**: Verify image paths in sidebar  
+**Slow Processing**: Reduce max dimension or disable chunking  
 
-🚀 How It Works (Quick Flow)
+## 📁 Project Structure
 
-Load OP1 (post-pitting) and OP3 (post-plantation) images
+```
+project/
+├── app.py              # Main application
+├── .env               # API key (do not commit!)
+├── requirements.txt   # Dependencies
+└── README.md         # This file
+```
 
-Compress & optionally split images into chunks
+## 🔒 Security
 
-Gemini analyzes pits vs saplings
+- Never commit `.env` to version control
+- Add `.env` to `.gitignore`
+- Get API key from [Google AI Studio](https://aistudio.google.com/app/apikey)
 
-Results are aggregated
+## 📝 License
 
-Survival statistics and reports are generated
-
-📊 Outputs
-
-Total pits detected
-
-Surviving saplings
-
-Casualties
-
-Survival & mortality percentages
-
-Confidence score based on analysis coverage
-
-🧪 Use Cases
-
-Government afforestation audits
-
-NGO plantation monitoring
-
-CSR environmental reporting
-
-Smart forestry & climate projects
-
-🔒 Security
-
-API key stored securely using .env
-
-No sensitive data committed to version control
-
-🏁 Version
-
-v1.0.0 – Initial Release
-
-Large-image support
-
-Chunk-based AI analysis
-
-Automated reporting
+Provided as-is for educational and research purposes.
